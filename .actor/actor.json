@@ -1,0 +1,25 @@
+{
+  "actorSpecification": 1,
+  "name": "sahpara-watcher",
+  "title": "SAHPRA Regulatory Monitor — South Africa",
+  "description": "Monitors the South African Health Products Regulatory Authority (SAHPRA) public pages for safety alerts, product recalls, news updates, industry communications, documents for comment, and safety information. Outputs structured JSON with change detection for efficient monitoring.",
+  "version": "1.0.0",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": ["source", "title", "published_date", "category", "is_new", "change_type"]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
+  }
+}
