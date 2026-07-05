@@ -1,0 +1,9 @@
+sahpara-watcher/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/

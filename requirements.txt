@@ -1,0 +1,7 @@
+# SAHPRA Watcher — SAHPRA Regulatory Monitor Apify Actor
+# Monitors 6 SAHPRA public pages for regulatory changes
+
+apify>=1.7.0
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+lxml>=5.0.0

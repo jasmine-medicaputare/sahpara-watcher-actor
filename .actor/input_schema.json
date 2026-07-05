@@ -1,0 +1,34 @@
+{
+  "title": "SAHPRA Watcher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "sources": {
+      "title": "Sources to Scrape",
+      "type": "array",
+      "description": "Select which SAHPRA pages to monitor. Leave empty to monitor all pages.",
+      "editor": "select",
+      "prefill": ["safety_alerts", "product_recalls", "news", "industry_comm", "documents_for_comment", "safety_info"],
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["safety_alerts", "product_recalls", "news", "industry_comm", "documents_for_comment", "safety_info"],
+        "enumTitles": ["Safety Alerts", "Product Recalls", "Latest News", "Communication to Industry", "Documents for Comments", "Safety Information"]
+      }
+    },
+    "max_items": {
+      "title": "Max Items Per Source",
+      "type": "integer",
+      "description": "Maximum number of items to scrape per source page.",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "useApifyProxy": {
+      "title": "Use Apify Proxy",
+      "type": "boolean",
+      "description": "Enable Apify's built-in proxy for anonymous scraping. Recommended if SAHPRA blocks your runs.",
+      "default": false
+    }
+  }
+}
